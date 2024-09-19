@@ -10,6 +10,7 @@ class MyException extends Exception {
     function __construct()
     {
         $this->message = "Моё исключение";
+        parent::__construct();
     }
 }
 
@@ -20,11 +21,4 @@ function myThrow()
     throw new MyException();
 }
 
-
-
-try {
-    myThrow();
-}
-catch (MyException $e) {
-    echo $e -> getMessage();
-}
+//myThrow();
